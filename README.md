@@ -48,10 +48,12 @@ $$\max_\phi \mathrm{E}_{q_\theta, q_\phi}\left( \sum_{\tau=t}^{t+H} \mathrm{V}_\
 $$\min_\psi \mathrm{E}_{q_\theta, q_\phi}\left( \sum_{\tau=t}^{t+H} \frac{1}{2} \left\| v_\psi(s_\tau) - \mathrm{V}_\lambda(s_\tau) \right\|^2 \right)$$
 
 ## Recurrent State-Space Machine (RSSM)
-The transition model is a **Recurrent State-Space Machine** (RSSM), with transitions modelled by both stochastic and deterministic components to enable predicting multiple futures. Without the stochastic component, the model is purely deterministic and cannot capture multiple futures, and withou the deterministic component, the transitions are purely stochastic making it very difficult to remember information over multiple time steps and long sequences. In the following diagram, squares are deterministic variables, circles stochastic variables, dashed lines inference and solid lines generative process. 
+The transition model is a **Recurrent State-Space Machine** (RSSM), with transitions modelled by both stochastic and deterministic components to enable predicting multiple futures. Without the stochastic component, the model is purely deterministic and cannot capture multiple futures, and withou the deterministic component, the transitions are purely stochastic making it very difficult to remember information over multiple time steps and long sequences. 
 
-![Recurrent State-Space Model architecture](assets/rssm_diagram.png)
-*Figure 1: The Recurrent State-Space Model (RSSM), the world model's latent core, introduced by PlaNet (Hafner et al., 2019).*
+<p align="center">
+  <img src="assets/rssm_diagram.png" alt="Recurrent State-Space Model architecture" width="500"><br>
+  <em>Figure 1: The Recurrent State-Space Model (RSSM), the world model's latent core, introduced by PlaNet (Hafner et al., 2019). Solid lines denote the generative process; dashed lines denote the inference (posterior) path that corrects the prior using observations. Shaded nodes are observed during training.</em>
+</p>
 
 ## Sources
 
