@@ -41,6 +41,10 @@ As when learning dynamics, imagined trajectories start at model states correspon
 
 $$\mathrm{V}_\lambda(s_\tau) \doteq (1 - \lambda) \sum_{n=1}^{H-1} \lambda^{n-1} \mathrm{V}_\mathrm{N}^n(s_\tau) + \lambda^{H-1} \mathrm{V}_\mathrm{N}^H(s_\tau)$$
 
+Note that $V_N^k$ is used to estimate rewards beyond k steps with the learned value model. 
+
+$$\mathrm{V}_\mathrm{N}^k(s_\tau) \doteq \mathbb{E}_{q_\theta, q_\phi}\!\left( \sum_{n=\tau}^{h-1} \gamma^{n-\tau} r_n + \gamma^{h-\tau} v_\psi(s_h) \right) \quad \text{with} \quad h = \min(\tau + k,\, t + H),$$
+
 To update the action and value models, the state estimates $V_{\lambda}(s_{\tau})$ are computed for all states $s_{\tau}$ along the imagined trajectories, with the objective for the action model being to predict actions that result in trajectories that maximize value estimates while the value model aims to regress the target value estimates. The objective for the action and value models are the following, respectively:
 
 $$\max_\phi \mathrm{E}_{q_\theta, q_\phi}\left( \sum_{\tau=t}^{t+H} \mathrm{V}_\lambda(s_\tau) \right)$$
