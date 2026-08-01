@@ -19,5 +19,5 @@ In addition to the Quadruped and Acrobot environments, Dreamer was also trained 
     width="300"
   >
   <br>
-  <em>Cup Catch, CartPole SwingUp and Reacher Easy latent imagination rollouts.</em>
+  <em>Cup Catch, CartPole SwingUp and Reacher Easy environment and latent imagination rollouts.</em>
 </p>
