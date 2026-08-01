@@ -2,6 +2,12 @@
 
 **Dreamer** is a *World Model* that learns latent space through which it backpropagates gradients in order to model the dynamics of the environment and behaviour of the agent, allowing it to solve long-horizon tasks from images purely in the latent imagination. 
 
+## Environment and Latent Imagination Rollouts
+
+The Dreamer world model implementation was trained on five DM Control Suite tasks for over a million env steps each: Quadruped, Acrobot, Cup Catch, Reacher Easy and CartPole SwingUp. Both the reacher and cartpole visualizations are included in the additional results md. 
+
+<p align="center"> <img src="assets/quad_imag.gif" alt="Quadruped latent imagination rollout" width="300"> <img src="assets/acrobot_imag.gif" alt="Acrobot latent imagination rollout" width="300"> <img src="assets/cup_imag.gif" alt="Cup Catch latent imagination rollout" width="300"> <br> <em>Quadruped, Acrobot and Cup Catch environment and imagination rollouts</em> </p>
+
 ## World Models and Latent Dynamics
 *World models* allow the agent make predictions of the future in a latent space using a parametric model that represents its internal knowledge of the environment. The latent dynamics are learned from a dataset of past experiences collected by the agent while interacting with the environment and can predict future rewards given actions and past observations. These dynamics consist of a representation, transition, and reward model. The representation model encodes observations and actions into model states $s_t$ in the latent space, the transition model predicts future states using past actions and states without knowing the corresponding observations that would cause them, and the reward model predicts the reward for being in a given model state.
 
